@@ -1,0 +1,57 @@
+
+.full-container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.wip-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);    
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wip-title {
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.wip-subtitle {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.wip-icon {
+  color: white;
+  font-size: 2rem;
+}
+
+@keyframes iconRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.icon-rotate {
+  animation: iconRotate 3s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
