@@ -36,6 +36,7 @@ export class Home implements OnInit, AfterViewInit {
     this.initInteractiveEffects();
     this.initProjectFilters();
     this.initScrollAnimations();
+    this.initStickyHeader(); // ADD THIS LINE
   }
 
   private initSmoothScrolling(): void {
@@ -82,7 +83,7 @@ export class Home implements OnInit, AfterViewInit {
         // Filter projects
         projectCards.forEach((card: HTMLElement) => {
           const category = card.getAttribute('data-category');
-          
+
           if (filter === 'all' || category === filter) {
             card.style.display = 'block';
             card.style.animation = 'fadeInUp 0.6s ease-out';
@@ -117,5 +118,76 @@ export class Home implements OnInit, AfterViewInit {
     if (sectionHeader) {
       observer.observe(sectionHeader);
     }
+  }
+
+  private initStickyHeader(): void {
+    const stickyHeader = this.elementRef.nativeElement.querySelector('#stickyHeader');
+    const mobileMenuBtn = this.elementRef.nativeElement.querySelector('#mobileMenuBtn');
+    const mobileNav = this.elementRef.nativeElement.querySelector('#mobileNav');
+
+    if (!stickyHeader) return;
+
+    let lastScrollY = 0;
+    let ticking = false;
+
+    const updateHeader = () => {
+      const scrollY = window.scrollY;
+
+      // Show header when scrolling up or at top, hide when scrolling down
+      if (scrollY < lastScrollY || scrollY < 100) {
+        stickyHeader.classList.add('visible');
+      } else {
+        stickyHeader.classList.remove('visible');
+        // Close mobile menu when hiding header
+        if (mobileNav) {
+          mobileNav.classList.remove('active');
+          mobileMenuBtn?.classList.remove('active');
+        }
+      }
+
+      lastScrollY = scrollY;
+      ticking = false;
+    };
+
+    const requestTick = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    };
+
+    // Show header initially after a delay
+    setTimeout(() => {
+      stickyHeader.classList.add('visible');
+    }, 1000);
+
+    // Handle scroll events
+    window.addEventListener('scroll', requestTick, { passive: true });
+
+    // Mobile menu toggle
+    if (mobileMenuBtn && mobileNav) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+      });
+    }
+
+    // Close mobile menu when clicking nav links
+    const mobileNavLinks = this.elementRef.nativeElement.querySelectorAll('.mobile-nav-link');
+    mobileNavLinks.forEach((link: HTMLAnchorElement) => {
+      link.addEventListener('click', () => {
+        mobileNav?.classList.remove('active');
+        mobileMenuBtn?.classList.remove('active');
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (!stickyHeader.contains(target)) {
+        mobileNav?.classList.remove('active');
+        mobileMenuBtn?.classList.remove('active');
+      }
+    });
   }
 }
