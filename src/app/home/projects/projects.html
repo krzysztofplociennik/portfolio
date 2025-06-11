@@ -1,0 +1,20 @@
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">{{ sectionTitle }}</h2>
+          <p class="section-subtitle">{{ sectionSubtitle }}</p>
+        </div>
+
+        <div class="projects-grid">
+          <app-project-card 
+            *ngFor="let project of filteredProjects; let i = index"
+            [project]="project"
+            [animationDelay]="(i + 1) * 0.1">
+          </app-project-card>
+        </div>
+
+        <div class="view-more">
+          <a href="#contact" class="btn btn-outline">View All Projects</a>
+        </div>
+      </div>
+    </section>

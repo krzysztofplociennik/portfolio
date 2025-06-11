@@ -1,0 +1,33 @@
+    <header class="sticky-header" id="stickyHeader">
+      <div class="header-content">
+        <a href="#" class="logo">{{ logoText }}</a>
+        
+        <nav class="nav-menu">
+          <a *ngFor="let link of navLinks" 
+             [href]="link.href" 
+             class="nav-link">
+            {{ link.label }}
+          </a>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="#contact" class="header-cta">{{ ctaText }}</a>
+          
+          <!-- Mobile menu button -->
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile menu -->
+      <nav class="mobile-nav" id="mobileNav">
+        <a *ngFor="let link of navLinks" 
+           [href]="link.href" 
+           class="mobile-nav-link">
+          {{ link.label }}
+        </a>
+      </nav>
+    </header>
