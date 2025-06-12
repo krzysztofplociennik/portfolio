@@ -13,7 +13,32 @@ export class Projects implements AfterViewInit {
   
   @Input() sectionTitle: string = 'Featured Projects';
   @Input() sectionSubtitle: string = 'Explore some of my recent work in Java development and web applications';
-  @Input() projects: Project[] = [];
+  @Input() projects: Project[] = [
+    {
+      id: 1,
+      title: 'E-Commerce Platform',
+      description: 'Full-stack e-commerce solution built with Spring Boot and Angular',
+      category: 'java',
+      technologies: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL'],
+      links: { demo: '#', source: '#' }
+    },
+    {
+      id: 2,
+      title: 'Task Management System',
+      description: 'Collaborative project management tool with real-time updates',
+      category: 'web',
+      technologies: ['Java', 'Spring Security', 'WebSocket', 'MySQL'],
+      links: { demo: '#', source: '#' }
+    },
+    {
+      id: 3,
+      title: 'Microservices Architecture',
+      description: 'Scalable microservices system with service discovery and load balancing',
+      category: 'microservices',
+      technologies: ['Spring Cloud', 'Docker', 'Kubernetes', 'Redis'],
+      links: { demo: '#', source: '#' }
+    }
+  ];
   @Input() categories: string[] = ['all', 'java', 'web', 'microservices', 'api'];
 
   activeFilter: string = 'all';
