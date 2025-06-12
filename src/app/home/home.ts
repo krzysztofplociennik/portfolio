@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Header, NavLink } from "../../shared/header/header";
 import { Landing } from "./landing/landing";
 import { Projects } from "./projects/projects";
 import { Project } from '../../shared/project-card/project';
+import { Skills } from "./skills/skills";
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Landing, Projects],
+  imports: [Header, Landing, Projects, Skills],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
-export class Home implements OnInit {
+export class Home {
 
   // Header configuration
   headerData = {
@@ -67,18 +68,6 @@ export class Home implements OnInit {
   };
 
   constructor() {
-    // Force scroll to top
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0);
-    }
-  }
-
-  ngOnInit() {
-    // Ensure scroll to top
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    }
+    document.documentElement.scrollTop = 0;
   }
 }
