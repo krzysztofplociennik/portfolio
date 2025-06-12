@@ -1,12 +1,42 @@
+import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, ElementRef, OnInit } from '@angular/core';
+
+interface SkillCategory {
+  id: string;
+  title: string;
+  skills: string[];
+}
 
 @Component({
   selector: 'app-skills',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './skills.html',
   styleUrl: './skills.css'
 })
 export class Skills implements OnInit, AfterViewInit {
+
+  skillCategories: SkillCategory[] = [
+    {
+      id: 'backend',
+      title: 'Backend',
+      skills: ['Java 11+', 'Spring Boot', 'Hibernate', 'JUnit', 'REST APIs', 'Maven', 'Gradle']
+    },
+    {
+      id: 'database',
+      title: 'Database',
+      skills: ['PostgreSQL', 'Oracle', 'MongoDB']
+    },
+    {
+      id: 'frontend',
+      title: 'Frontend',
+      skills: ['Angular 15+', 'HTML5', 'CSS', 'pdfmake']
+    },
+    {
+      id: 'tools',
+      title: 'Tools',
+      skills: ['Git', 'IntelliJ IDEA', 'VS Code', 'Linux', 'Windows', 'JIRA']
+    }
+  ];
 
   constructor(private elementRef: ElementRef) {}
 
@@ -63,12 +93,6 @@ export class Skills implements OnInit, AfterViewInit {
     if (summary) {
       observer.observe(summary);
     }
-
-    // Observe timeline items
-    const timelineItems = this.elementRef.nativeElement.querySelectorAll('.timeline-item');
-    timelineItems.forEach((item: HTMLElement) => {
-      observer.observe(item);
-    });
   }
 
   private initSkillTagAnimations(): void {

@@ -7,6 +7,23 @@
       </p>
     </div>
 
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+          <div *ngFor="let category of skillCategories; let i = index" 
+               class="skill-category">
+            <h3 class="category-title montserrat">
+              {{ category.title }}
+            </h3>
+            <div class="skills-list">
+              <span *ngFor="let skill of category.skills; let j = index" 
+                    class="skill-tag"
+                    [style.animation-delay.s]="j * 0.1">
+                {{ skill }}
+              </span>
+            </div>
+          </div>
+        </div>
+
     <!-- Professional Summary -->
     <div class="professional-summary">
       <h3 class="summary-title montserrat">Professional Summary</h3>
@@ -21,116 +38,5 @@
       </button>
     </div>
 
-    <!-- Skills Grid -->
-    <div class="skills-grid">
-      <!-- Backend Development -->
-      <div class="skill-category">
-        <h3 class="category-title montserrat">
-          <span class="category-icon">⚙️</span>
-          Backend Development
-        </h3>
-        <div class="skills-list">
-          <span class="skill-tag">Java 17+</span>
-          <span class="skill-tag">Spring Boot</span>
-          <span class="skill-tag">Spring Security</span>
-          <span class="skill-tag">Spring Data JPA</span>
-          <span class="skill-tag">Hibernate</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">Microservices</span>
-          <span class="skill-tag">Maven</span>
-        </div>
-      </div>
-
-      <!-- Frontend Development -->
-      <div class="skill-category">
-        <h3 class="category-title montserrat">
-          <span class="category-icon">🎨</span>
-          Frontend Development
-        </h3>
-        <div class="skills-list">
-          <span class="skill-tag">Angular 15+</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">JavaScript ES6+</span>
-          <span class="skill-tag">HTML5</span>
-          <span class="skill-tag">CSS3/SCSS</span>
-          <span class="skill-tag">RxJS</span>
-          <span class="skill-tag">Angular Material</span>
-          <span class="skill-tag">Responsive Design</span>
-        </div>
-      </div>
-
-      <!-- Database & Storage -->
-      <div class="skill-category">
-        <h3 class="category-title montserrat">
-          <span class="category-icon">🗄️</span>
-          Database & Storage
-        </h3>
-        <div class="skills-list">
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">Oracle</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">Redis</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">JPA/Hibernate</span>
-          <span class="skill-tag">Database Design</span>
-        </div>
-      </div>
-
-      <!-- Tools & Technologies -->
-      <div class="skill-category">
-        <h3 class="category-title montserrat">
-          <span class="category-icon">🔧</span>
-          Tools & Technologies
-        </h3>
-        <div class="skills-list">
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Jenkins</span>
-          <span class="skill-tag">IntelliJ IDEA</span>
-          <span class="skill-tag">VS Code</span>
-          <span class="skill-tag">Postman</span>
-          <span class="skill-tag">SonarQube</span>
-          <span class="skill-tag">JIRA</span>
-        </div>
-      </div>
-
-      <!-- Cloud & DevOps -->
-      <!-- <div class="skill-category">
-        <h3 class="category-title montserrat">
-          <span class="category-icon">☁️</span>
-          Cloud & DevOps
-        </h3>
-        <div class="skills-list">
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">Azure</span>
-          <span class="skill-tag">Kubernetes</span>
-          <span class="skill-tag">CI/CD</span>
-          <span class="skill-tag">Linux</span>
-          <span class="skill-tag">Nginx</span>
-          <span class="skill-tag">Apache Tomcat</span>
-          <span class="skill-tag">Monitoring</span>
-        </div>
-      </div> -->
-
-      <!-- Methodologies -->
-      <!-- <div class="skill-category">
-        <h3 class="category-title montserrat">
-          <span class="category-icon">📋</span>
-          Methodologies
-        </h3>
-        <div class="skills-list">
-          <span class="skill-tag">Agile/Scrum</span>
-          <span class="skill-tag">TDD</span>
-          <span class="skill-tag">Clean Code</span>
-          <span class="skill-tag">Design Patterns</span>
-          <span class="skill-tag">Unit Testing</span>
-          <span class="skill-tag">Integration Testing</span>
-          <span class="skill-tag">Code Review</span>
-          <span class="skill-tag">API Design</span>
-        </div>
-      </div> -->
-      
-    </div>
   </div>
 </section>
