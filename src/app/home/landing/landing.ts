@@ -9,7 +9,7 @@ import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
 })
 export class Landing implements AfterViewInit {
 
-  @Input() name: string = 'Your Full Name';
+  @Input() name: string = 'Krzysztof Płóciennik';
   @Input() title: string = 'Java Developer';
   @Input() description: string = 'Passionate Java developer with expertise in building scalable enterprise applications.';
   @Input() profileImage: string = 'test-cv-photo.png';

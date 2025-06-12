@@ -9,10 +9,10 @@ import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
 })
 export class Header implements AfterViewInit {
 
-  @Input() logoText: string = 'Krzysztof Płóciennik';
+  @Input() logoText: string = 'KP';
   @Input() ctaText: string = 'Get In Touch';
   @Input() navLinks: NavLink[] = [
-    { href: '#', label: 'Home' },
+    // { href: '#', label: 'Home' },
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
     { href: '#about', label: 'About' },
