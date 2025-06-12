@@ -4,8 +4,8 @@
   min-height: 100vh;
   background: #00020b;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   position: relative;
   overflow: hidden;
   margin: 0;
@@ -14,15 +14,16 @@
 .hero-content {
   max-width: 1200px;
   padding: 2rem;
-  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
   z-index: 2;
+  margin-top: 5%;
 }
 
 .hero-text {
   color: white;
+  text-align: center;
 }
 
 .greeting {
@@ -67,6 +68,7 @@
 }
 
 .hero-image {
+  margin-top: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,8 +77,9 @@
 
 .profile-container {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 30%;
+  height: 30%;
+  border: wheat;
 }
 
 .profile-image {
@@ -91,15 +94,6 @@
 
 .profile-image:hover {
   transform: scale(1.05);
-}
-
-.floating-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
 }
 
 .tech-badge {
@@ -133,20 +127,6 @@
   animation-delay: 2s;
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 1rem;
-  right: 2rem;
-  color: rgba(255, 255, 255, 0.7);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  animation: bounce 2s infinite;
-}
-
-/* Special ID selector for photo - keep this for your specific image styling */
 #photo {
   width: 200px;
   height: 300px;
