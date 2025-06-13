@@ -1,4 +1,3 @@
-// project-card.component.ts - Simplified for expanding card effect
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Project } from './project.model';

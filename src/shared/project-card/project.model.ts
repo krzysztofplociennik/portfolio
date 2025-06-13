@@ -1,4 +1,3 @@
-// Simplified project.ts interface
 export interface Project {
   id: number;
   title: string;
@@ -12,14 +11,12 @@ export interface Project {
   };
   featured?: boolean;
   
-  // Essential optional fields for enhanced card content
-  longDescription?: string;    // Detailed project description
-  features?: string[];         // Key features list
-  imageUrl?: string;          // Project screenshot/image
-  status?: 'completed' | 'in-progress' | 'planned'; // Project status
+  longDescription?: string;
+  features?: string[];
+  imageUrl?: string;
+  status?: 'completed' | 'in-progress' | 'planned';
 }
 
-// Example usage with streamlined data:
 export const sampleProjects: Project[] = [
   {
     id: 1,

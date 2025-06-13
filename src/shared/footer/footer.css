@@ -1,10 +1,10 @@
-/* Footer Section Styles */
 .footer-section {
   background: #00020b;
   position: relative;
   padding: 4rem 0 2rem;
-  margin: 0; /* Remove margin-top that might cause white space */
+  margin: 0; 
   overflow: hidden;
+  margin-top: 10rem;
 }
 
 .footer-container {
@@ -15,7 +15,6 @@
   z-index: 2;
 }
 
-/* Main Footer Content */
 .footer-main {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -23,7 +22,6 @@
   margin-bottom: 3rem;
 }
 
-/* Brand Section */
 .footer-brand {
   color: white;
 }
@@ -52,7 +50,6 @@
   margin: 0;
 }
 
-/* Footer Headings */
 .footer-heading {
   font-size: 1.1rem;
   font-weight: 600;
@@ -72,7 +69,6 @@
   border-radius: 2px;
 }
 
-/* Quick Links */
 .links-list {
   list-style: none;
   padding: 0;
@@ -110,7 +106,6 @@
   left: 0;
 }
 
-/* Contact Section */
 .contact-items {
   display: flex;
   flex-direction: column;
@@ -145,7 +140,6 @@
   font-size: 0.9rem;
 }
 
-/* Social Links */
 .social-links {
   display: flex;
   flex-direction: column;
@@ -183,7 +177,6 @@
   font-weight: 500;
 }
 
-/* Footer Bottom */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -204,7 +197,6 @@
   font-weight: 600;
 }
 
-/* Background Effects */
 .footer-bg-effects {
   position: absolute;
   top: 0;
@@ -255,7 +247,6 @@
   }
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .footer-main {
     grid-template-columns: 1fr 1fr;

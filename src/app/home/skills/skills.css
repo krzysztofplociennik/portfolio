@@ -1,4 +1,3 @@
-/* Skills Section Styles - Clean Version */
 .skills-section {
   padding: 5rem 0;
   background: #00020b;
@@ -40,7 +39,6 @@
   line-height: 1.6;
 }
 
-/* Professional Summary */
 .professional-summary {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
@@ -108,17 +106,13 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Skills Grid - NEW LAYOUT */
-.skills-grid {
+.skills-container {
   display: flex;
   flex-direction: row;
-  /* grid-template-columns: repeat(2, 1fr); */
-  /* grid-template-rows: repeat(2, 1fr); */
   gap: 2rem;
-  margin-bottom: 2rem;
-  height: 500px; /* Fixed container height */
-  /* justify-content: space-evenly; */
-  /* align-items: stretch;  */
+  margin-bottom: 1rem;
+  height: 500px;
+  justify-content: space-evenly;
 }
 
 .skill-category {
@@ -134,8 +128,7 @@
   flex-direction: column;
   width: 20%;
   align-items: center;
-  height: 80%;
-  /* Grid items will automatically fill the available space equally */
+  height: 95%;
 }
 
 .skill-category::before {
@@ -221,7 +214,6 @@
   left: 100%;
 }
 
-/* Animation for skill tags */
 @keyframes fadeInScale {
   from {
     opacity: 0;
@@ -233,7 +225,6 @@
   }
 }
 
-/* Staggered animation for skill tags */
 .skill-tag:nth-child(1) { animation-delay: 0.1s; }
 .skill-tag:nth-child(2) { animation-delay: 0.2s; }
 .skill-tag:nth-child(3) { animation-delay: 0.3s; }
@@ -243,7 +234,6 @@
 .skill-tag:nth-child(7) { animation-delay: 0.7s; }
 .skill-tag:nth-child(8) { animation-delay: 0.8s; }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .skills-section {
     padding: 3rem 0;
@@ -261,18 +251,18 @@
   .skills-grid {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
-    height: auto; /* Let it be natural height on mobile */
+    height: auto;
     gap: 1.5rem;
   }
 
   .skill-category {
     padding: 1.5rem;
-    min-height: 250px; /* Minimum height on mobile */
+    min-height: 250px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1199px) {
   .skills-grid {
-    height: 500px; /* Shorter on tablets */
+    height: 500px;
   }
 }

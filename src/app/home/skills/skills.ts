@@ -13,7 +13,7 @@ interface SkillCategory {
   templateUrl: './skills.html',
   styleUrl: './skills.css'
 })
-export class Skills implements OnInit, AfterViewInit {
+export class Skills implements AfterViewInit {
 
   skillCategories: SkillCategory[] = [
     {
@@ -40,31 +40,22 @@ export class Skills implements OnInit, AfterViewInit {
 
   constructor(private elementRef: ElementRef) {}
 
-  ngOnInit() {
-    // Component initialization
-  }
-
   ngAfterViewInit() {
     this.initScrollAnimations();
     this.initSkillTagAnimations();
   }
 
-  // CV Download Function
   downloadCV(): void {
-    // Replace this with your actual CV file path
     const cvUrl = 'assets/cv/YourName_Java_Developer_CV.pdf';
     
-    // Create a temporary link element
     const link = document.createElement('a');
     link.href = cvUrl;
     link.download = 'YourName_Java_Developer_CV.pdf';
     
-    // Trigger download
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     
-    // For demo purposes, show an alert (remove this in production)
     alert('CV download would start here. Please add your actual CV file to assets/cv/ folder.');
   }
 
@@ -82,13 +73,11 @@ export class Skills implements OnInit, AfterViewInit {
       });
     }, observerOptions);
 
-    // Observe skill categories
     const skillCategories = this.elementRef.nativeElement.querySelectorAll('.skill-category');
     skillCategories.forEach((category: HTMLElement) => {
       observer.observe(category);
     });
 
-    // Observe professional summary
     const summary = this.elementRef.nativeElement.querySelector('.professional-summary');
     if (summary) {
       observer.observe(summary);
@@ -96,7 +85,6 @@ export class Skills implements OnInit, AfterViewInit {
   }
 
   private initSkillTagAnimations(): void {
-    // Add hover effects to skill tags
     const skillTags = this.elementRef.nativeElement.querySelectorAll('.skill-tag');
     skillTags.forEach((tag: HTMLElement, index: number) => {
       tag.style.animationDelay = `${index * 0.1}s`;

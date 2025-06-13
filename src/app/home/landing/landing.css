@@ -1,5 +1,3 @@
-/* home/landing/landing.css - All hero/landing section styles */
-
 .hero-section {
   min-height: 100vh;
   background: #00020b;
@@ -132,7 +130,6 @@
   height: 300px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr;

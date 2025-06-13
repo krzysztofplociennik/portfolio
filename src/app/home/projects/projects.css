@@ -1,11 +1,9 @@
-/* home/projects/projects.css - Projects section container styles */
-
 .projects-section {
-  padding: 5rem 0; /* Remove bottom padding that might cause gap */
+  padding: 5rem 0;
   background: #00020b;
   min-height: 100vh;
   position: relative;
-  margin: 0; /* Ensure no margins */
+  margin: 0;
 }
 
 .container {
@@ -78,10 +76,9 @@
   text-align: center;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .projects-section {
-    padding: 3rem 0; /* Consistent padding */
+    padding: 3rem 0;
   }
 
   .section-title {

@@ -73,13 +73,11 @@ export class Projects implements AfterViewInit {
       rootMargin: '0px 0px -50px 0px'
     });
 
-    // Observe project cards for scroll animations
     const projectCards = this.elementRef.nativeElement.querySelectorAll('.project-card');
     projectCards.forEach((card: HTMLElement) => {
       observer.observe(card);
     });
 
-    // Observe section header
     const sectionHeader = this.elementRef.nativeElement.querySelector('.section-header');
     if (sectionHeader) {
       observer.observe(sectionHeader);

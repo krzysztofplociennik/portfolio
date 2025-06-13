@@ -12,11 +12,8 @@ export class Header implements AfterViewInit {
   @Input() logoText: string = 'KP';
   @Input() ctaText: string = 'Get In Touch';
   @Input() navLinks: NavLink[] = [
-    // { href: '#', label: 'Home' },
     { href: '#skills', label: 'Skills' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#about', label: 'About' },
-    { href: '#contact', label: 'Contact' }
+    { href: '#projects', label: 'Projects' }
   ];
 
   constructor(private elementRef: ElementRef) {}
@@ -59,15 +56,12 @@ export class Header implements AfterViewInit {
       }
     };
 
-    // Show header initially after a delay
     setTimeout(() => {
       stickyHeader.classList.add('visible');
     }, 1000);
 
-    // Handle scroll events
     window.addEventListener('scroll', requestTick, { passive: true });
 
-    // Mobile menu toggle
     if (mobileMenuBtn && mobileNav) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileNav.classList.toggle('active');
@@ -75,7 +69,6 @@ export class Header implements AfterViewInit {
       });
     }
 
-    // Close mobile menu when clicking nav links
     const mobileNavLinks = this.elementRef.nativeElement.querySelectorAll('.mobile-nav-link, .nav-link');
     mobileNavLinks.forEach((link: HTMLAnchorElement) => {
       link.addEventListener('click', () => {
@@ -84,7 +77,6 @@ export class Header implements AfterViewInit {
       });
     });
 
-    // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
       if (!stickyHeader.contains(target)) {

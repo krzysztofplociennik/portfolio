@@ -1,4 +1,3 @@
-<!-- project-card.html - Expanding card approach -->
 <div class="project-card" 
      [attr.data-category]="project.category"
      [class.featured]="project.featured"
@@ -7,27 +6,22 @@
      (mouseenter)="onMouseEnter()"
      (mouseleave)="onMouseLeave()">
   
-  <!-- Card Image/Header -->
   <div class="project-image montserrat" [attr.data-title]="project.title">
     <img *ngIf="project.imageUrl" [src]="project.imageUrl" [alt]="project.title">
   </div>
 
-  <!-- Always visible basic info -->
   <div class="project-basic-info">
     <h3 class="project-title montserrat">{{ project.title }}</h3>
     <p class="project-category montserrat">{{ project.category }}</p>
     <p class="project-description-short montserrat">{{ project.description }}</p>
   </div>
 
-  <!-- Expanded content - only visible on hover -->
   <div class="project-expanded-content" [class.visible]="isExpanded">
     
-    <!-- Detailed Description -->
     <div *ngIf="project.longDescription" class="project-long-description">
       <p class="montserrat">{{ project.longDescription }}</p>
     </div>
 
-    <!-- Key Features -->
     <div *ngIf="project.features && project.features.length > 0" class="project-features">
       <h4 class="montserrat">Key Features:</h4>
       <ul class="features-list montserrat">
@@ -35,7 +29,6 @@
       </ul>
     </div>
 
-    <!-- Technologies -->
     <div class="project-tech-section">
       <h4 class="montserrat">Technologies:</h4>
       <div class="project-tech">
@@ -45,7 +38,6 @@
       </div>
     </div>
 
-    <!-- Project Meta Information -->
     <div class="project-meta" *ngIf="project.status">
       <div class="meta-item montserrat">
         <strong>Status:</strong> 
@@ -53,7 +45,6 @@
       </div>
     </div>
 
-    <!-- Action Links -->
     <div class="project-links">
       <a *ngIf="project.links.demo" 
          [href]="project.links.demo" 
