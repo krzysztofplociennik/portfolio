@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
 import { ProjectCard } from "../../../shared/project-card/project-card";
-import { Project } from '../../../shared/project-card/project';
+import { Project } from '../../../shared/project-card/project.model';
 
 @Component({
   selector: 'app-projects',

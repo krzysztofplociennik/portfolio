@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Header, NavLink } from "../../shared/header/header";
 import { Landing } from "./landing/landing";
 import { Projects } from "./projects/projects";
-import { Project } from '../../shared/project-card/project';
 import { Skills } from "./skills/skills";
 
 @Component({

@@ -1,32 +1,78 @@
-    <div class="project-card" 
-         [attr.data-category]="project.category"
-         [class.featured]="project.featured"
-         [style.animation-delay.s]="animationDelay">
-      <div class="project-image montserrat" [attr.data-title]="project.title">
-        <div class="project-overlay">
-          <div class="project-info">
-            <h3 class="project-title montserrat">{{ project.title }}</h3>
-            <p class="project-description montserrat">{{ project.description }}</p>
-            
-            <div class="project-tech">
-              <span *ngFor="let tech of project.technologies" class="tech-tag montserrat">
-                {{ tech }}
-              </span>
-            </div>
-            
-            <div class="project-links">
-              <a *ngIf="project.links.demo" 
-                 [href]="project.links.demo" 
-                 class="project-link montserrat">
-                <span>🔗</span> Live Demo
-              </a>
-              <a *ngIf="project.links.source" 
-                 [href]="project.links.source" 
-                 class="project-link montserrat">
-                <span>📁</span> Source Code
-              </a>
-            </div>
-          </div>
-        </div>
+<!-- project-card.html - Expanding card approach -->
+<div class="project-card" 
+     [attr.data-category]="project.category"
+     [class.featured]="project.featured"
+     [class.expanded]="isExpanded"
+     [style.animation-delay.s]="animationDelay"
+     (mouseenter)="onMouseEnter()"
+     (mouseleave)="onMouseLeave()">
+  
+  <!-- Card Image/Header -->
+  <div class="project-image montserrat" [attr.data-title]="project.title">
+    <img *ngIf="project.imageUrl" [src]="project.imageUrl" [alt]="project.title">
+  </div>
+
+  <!-- Always visible basic info -->
+  <div class="project-basic-info">
+    <h3 class="project-title montserrat">{{ project.title }}</h3>
+    <p class="project-category montserrat">{{ project.category }}</p>
+    <p class="project-description-short montserrat">{{ project.description }}</p>
+  </div>
+
+  <!-- Expanded content - only visible on hover -->
+  <div class="project-expanded-content" [class.visible]="isExpanded">
+    
+    <!-- Detailed Description -->
+    <div *ngIf="project.longDescription" class="project-long-description">
+      <p class="montserrat">{{ project.longDescription }}</p>
+    </div>
+
+    <!-- Key Features -->
+    <div *ngIf="project.features && project.features.length > 0" class="project-features">
+      <h4 class="montserrat">Key Features:</h4>
+      <ul class="features-list montserrat">
+        <li *ngFor="let feature of project.features">{{ feature }}</li>
+      </ul>
+    </div>
+
+    <!-- Technologies -->
+    <div class="project-tech-section">
+      <h4 class="montserrat">Technologies:</h4>
+      <div class="project-tech">
+        <span *ngFor="let tech of project.technologies" class="tech-tag montserrat">
+          {{ tech }}
+        </span>
       </div>
     </div>
+
+    <!-- Project Meta Information -->
+    <div class="project-meta" *ngIf="project.status">
+      <div class="meta-item montserrat">
+        <strong>Status:</strong> 
+        <span class="status-badge" [class]="'status-' + project.status">{{ project.status }}</span>
+      </div>
+    </div>
+
+    <!-- Action Links -->
+    <div class="project-links">
+      <a *ngIf="project.links.demo" 
+         [href]="project.links.demo" 
+         class="project-link demo-link montserrat"
+         target="_blank">
+        <span>🚀</span> Live Demo
+      </a>
+      <a *ngIf="project.links.source" 
+         [href]="project.links.source" 
+         class="project-link source-link montserrat"
+         target="_blank">
+        <span>📁</span> Source Code
+      </a>
+      <a *ngIf="project.links.case_study" 
+         [href]="project.links.case_study" 
+         class="project-link case-study-link montserrat"
+         target="_blank">
+        <span>📄</span> Case Study
+      </a>
+    </div>
+  </div>
+</div>
