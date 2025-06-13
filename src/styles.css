@@ -1,9 +1,35 @@
-body {
+/* Global Styles - Updated to fix white bar issue */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-} 
+  background: #00020b; /* Same as your sections */
+}
 
 .montserrat {
   font-family: 'Montserrat';
+}
+
+/* Ensure no white gaps between sections */
+app-root {
+  display: block;
+  background: #00020b;
+  min-height: 100vh;
+}
+
+/* Remove any default margins on main sections */
+app-header,
+app-landing, 
+app-skills,
+app-projects,
+app-footer {
+  display: block;
+  margin: 0;
+  padding: 0;
 }

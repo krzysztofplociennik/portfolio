@@ -1,0 +1,87 @@
+<footer class="footer-section">
+  <div class="footer-container">
+    
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+      
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <h3 class="brand-name montserrat">{{ name }}</h3>
+        <p class="brand-title montserrat">{{ title }}</p>
+        <p class="brand-description montserrat">
+          Passionate about building scalable enterprise applications and modern web solutions.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4 class="footer-heading montserrat">Quick Links</h4>
+        <ul class="links-list">
+          <li *ngFor="let link of quickLinks">
+            <a (click)="onQuickLinkClick(link)" 
+               class="footer-link montserrat"
+               [href]="link.href">
+              {{ link.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <h4 class="footer-heading montserrat">Get In Touch</h4>
+        <div class="contact-items">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <a [href]="'mailto:' + email" class="contact-link montserrat">{{ email }}</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📱</span>
+            <a [href]="'tel:' + phone" class="contact-link montserrat">{{ phone }}</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span class="contact-text montserrat">{{ location }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="footer-social">
+        <h4 class="footer-heading montserrat">Connect</h4>
+        <div class="social-links">
+          <button *ngFor="let social of socialLinks" 
+                  (click)="onSocialClick(social)"
+                  class="social-link montserrat"
+                  [title]="social.platform">
+            <span class="social-icon">{{ social.icon }}</span>
+            <span class="social-label">{{ social.platform }}</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        <p class="copyright-text montserrat">
+          © {{ currentYear }} {{ name }}. All rights reserved.
+        </p>
+      </div>
+      <div class="footer-tech">
+        <p class="tech-text montserrat">
+          Built with <span class="tech-highlight">Angular</span> & <span class="tech-highlight">❤️</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Background Effects -->
+  <div class="footer-bg-effects">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-circle bg-circle-3"></div>
+  </div>
+</footer>
