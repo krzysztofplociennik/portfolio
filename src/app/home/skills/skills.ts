@@ -27,15 +27,15 @@ export class Skills implements AfterViewInit {
       skills: ['PostgreSQL', 'Oracle', 'MongoDB']
     },
     {
+      id: 'tools',
+      title: 'Tools',
+      skills: ['Git', 'IntelliJ IDEA', 'VS Code', 'Windows', 'Linux', 'JIRA']
+    },
+        {
       id: 'frontend',
       title: 'Frontend',
       skills: ['Angular 15+', 'HTML5', 'CSS', 'pdfmake']
     },
-    {
-      id: 'tools',
-      title: 'Tools',
-      skills: ['Git', 'IntelliJ IDEA', 'VS Code', 'Linux', 'Windows', 'JIRA']
-    }
   ];
 
   constructor(private elementRef: ElementRef) {}

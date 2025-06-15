@@ -72,6 +72,7 @@
   font-weight: 600;
   margin-bottom: 1.5rem;
   color: #ffffff;
+  text-align: center;
 }
 
 .summary-text {
@@ -79,6 +80,7 @@
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .cv-download {
