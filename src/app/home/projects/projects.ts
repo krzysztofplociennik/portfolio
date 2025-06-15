@@ -16,27 +16,27 @@ export class Projects implements AfterViewInit {
   @Input() projects: Project[] = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution built with Spring Boot and Angular',
-      category: 'java',
+      title: 'Inko',
+      description: 'Personal repository of hints',
+      category: 'web',
       technologies: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL'],
-      links: { demo: '#', source: '#' }
+      links: { demo: 'https://inkodemo.vercel.app/search-articles', source: 'https://github.com/krzysztofplociennik/inko-backend' }
     },
     {
       id: 2,
-      title: 'Task Management System',
-      description: 'Collaborative project management tool with real-time updates',
+      title: 'Custom Size File Generator',
+      description: 'File Generator',
       category: 'web',
-      technologies: ['Java', 'Spring Security', 'WebSocket', 'MySQL'],
-      links: { demo: '#', source: '#' }
+      technologies: ['Angular'],
+      links: { demo: 'https://custom-size-file.vercel.app/', source: 'https://github.com/krzysztofplociennik/custom-size-file' }
     },
     {
       id: 3,
-      title: 'Microservices Architecture',
-      description: 'Scalable microservices system with service discovery and load balancing',
-      category: 'microservices',
-      technologies: ['Spring Cloud', 'Docker', 'Kubernetes', 'Redis'],
-      links: { demo: '#', source: '#' }
+      title: 'Copy-Paste Anonymizer',
+      description: 'Application that can anonymize your clipboard data',
+      category: 'desktop',
+      technologies: ['Java', 'JavaFX'],
+      links: { demo: '#', source: 'https://github.com/krzysztofplociennik/copy-paste-anonymizer' }
     }
   ];
   @Input() categories: string[] = ['all', 'java', 'web', 'microservices', 'api'];
