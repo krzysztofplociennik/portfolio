@@ -15,6 +15,9 @@ interface SkillCategory {
 })
 export class Skills implements AfterViewInit {
 
+  cvPathPL: string = 'assets/pdf/Krzysztof-Plociennik-CV-PL.pdf';
+  cvPathEN: string = 'assets/pdf/Krzysztof-Plociennik-CV-EN.pdf';
+
   skillCategories: SkillCategory[] = [
     {
       id: 'backend',
@@ -45,18 +48,9 @@ export class Skills implements AfterViewInit {
     this.initSkillTagAnimations();
   }
 
-  downloadCV(): void {
-    const cvUrl = 'assets/cv/YourName_Java_Developer_CV.pdf';
-    
-    const link = document.createElement('a');
-    link.href = cvUrl;
-    link.download = 'YourName_Java_Developer_CV.pdf';
-    
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    alert('CV download would start here. Please add your actual CV file to assets/cv/ folder.');
+  openCVInBrowser(): void {
+    const cvUrl = this.cvPathPL;
+    window.open(cvUrl, '_blank');
   }
 
   private initScrollAnimations(): void {

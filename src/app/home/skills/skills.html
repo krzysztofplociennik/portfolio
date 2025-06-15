@@ -3,36 +3,39 @@
     <div class="section-header">
       <h2 class="section-title montserrat">Skills & Expertise</h2>
       <p class="section-subtitle montserrat">
-        A comprehensive overview of my technical skills and professional experience as a Java developer
+        An overview of my technical skills and professional experience as a Java developer
       </p>
     </div>
 
-        <div class="skills-container">
-          <div *ngFor="let category of skillCategories; let i = index" 
-               class="skill-category">
-            <h3 class="category-title montserrat">
-              {{ category.title }}
-            </h3>
-            <div class="skills-list">
-              <span *ngFor="let skill of category.skills; let j = index" 
-                    class="skill-tag"
-                    [style.animation-delay.s]="j * 0.1">
-                {{ skill }}
-              </span>
-            </div>
-          </div>
+    <div class="skills-container">
+      <div *ngFor="let category of skillCategories; let i = index" class="skill-category">
+        <h3 class="category-title montserrat">
+          {{ category.title }}
+        </h3>
+        <div class="skills-list">
+          <span *ngFor="let skill of category.skills; let j = index" class="skill-tag"
+            [style.animation-delay.s]="j * 0.1">
+            {{ skill }}
+          </span>
         </div>
+      </div>
+    </div>
 
     <div class="professional-summary">
       <h3 class="summary-title montserrat">Professional Summary</h3>
       <p class="summary-text montserrat">
-        I am a Junior Java Developer with 3 years of experience in developing and maintaining web applications based on Java + Spring Boot and Angular. <br>
-        I have strong backend skills and experience working with various databases (MongoDB, Oracle), as well as frontend development experience.  <br>
-        I value effective teamwork, attention to code quality, and continuous learning of new technologies. 
+        I am a Junior Java Developer with 3 years of experience in developing and maintaining web applications based on
+        Java + Spring Boot and Angular. <br>
+        I have strong backend skills and experience working with various databases (MongoDB, Oracle), as well as
+        frontend development experience. <br>
+        I value effective teamwork, attention to code quality, and continuous learning of new technologies.
       </p>
-      <button class="cv-download montserrat" (click)="downloadCV()">
-        <span class="montserrat">📄 Download CV</span>  
+
+      <button class="cv-button montserrat" (click)="openCVInBrowser()">
+        <img src="assets/images/svg/open_in_new.svg" class="cv-icon" alt="Download">
+        <span class="montserrat">View my CV</span>
       </button>
+
     </div>
 
   </div>

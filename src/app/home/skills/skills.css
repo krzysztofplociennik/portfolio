@@ -34,7 +34,7 @@
 .section-subtitle {
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
-  max-width: 600px;
+  max-width: 80%;
   margin: 0 auto;
   line-height: 1.6;
 }
@@ -83,7 +83,7 @@
   text-align: left;
 }
 
-.cv-download {
+.cv-button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -101,7 +101,7 @@
   font-family: inherit;
 }
 
-.cv-download:hover {
+.cv-button:hover {
   background: rgba(255, 255, 255, 0.25);
   border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
