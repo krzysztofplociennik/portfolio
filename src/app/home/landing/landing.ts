@@ -12,7 +12,7 @@ export class Landing implements AfterViewInit {
   @Input() name: string = 'Krzysztof Płóciennik';
   @Input() title: string = 'Java Developer';
   @Input() description: string = 'Passionate Java developer with expertise in building scalable enterprise applications.';
-  @Input() profileImage: string = 'test-cv-photo.png';
+  @Input() profileImage: string = 'assets/images/png/test-cv-photo.png';
   @Input() techBadges: string[] = ['Java', 'Spring Boot', 'Angular'];
 
   constructor(private elementRef: ElementRef) {}
