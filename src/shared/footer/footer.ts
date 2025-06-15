@@ -22,21 +22,20 @@ export class Footer {
   
   @Input() name: string = 'Krzysztof Płóciennik';
   @Input() title: string = 'Java Developer';
-  @Input() email: string = 'your.email@example.com';
-  @Input() phone: string = '+48 123 456 789';
-  @Input() location: string = 'Warsaw, Poland';
+  @Input() email: string = 'krzysztofplociennik6@gmail.com';
+  @Input() phone: string = '+48 603 093 744';
+  @Input() location: string = 'Mikstat, Poland';
   
   @Input() socialLinks: SocialLink[] = [
-    { platform: 'LinkedIn', url: 'https://linkedin.com/in/yourprofile', icon: '💼' },
+    { platform: 'LinkedIn', url: 'https://linkedin.com/in/yourprofile', icon: 'assets/images/svg/github-8-xxl.png' },
     { platform: 'GitHub', url: 'https://github.com/yourusername', icon: '💻' },
     { platform: 'Email', url: 'mailto:your.email@example.com', icon: '📧' }
   ];
   
   @Input() quickLinks: FooterLink[] = [
+    { label: 'Home', href: '#landing' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Projects', href: '#projects' }
   ];
 
   currentYear = new Date().getFullYear();
