@@ -11,13 +11,13 @@ import { Project } from '../../../shared/project-card/project.model';
 })
 export class Projects implements AfterViewInit {
   
-  @Input() sectionTitle: string = 'Featured Projects';
+  @Input() sectionTitle: string = 'Featured Side Projects';
   @Input() sectionSubtitle: string = 'Explore some of my recent work in Java development and web applications';
   @Input() projects: Project[] = [
     {
       id: 1,
       title: 'Inko',
-      description: 'Personal repository of hints',
+      description: 'A side project that serves as a personal collection of handy tips related to tech topics.',
       category: 'web',
       technologies: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL'],
       links: { demo: 'https://inkodemo.vercel.app/search-articles', source: 'https://github.com/krzysztofplociennik/inko-backend' }
@@ -33,7 +33,7 @@ export class Projects implements AfterViewInit {
     {
       id: 3,
       title: 'Copy-Paste Anonymizer',
-      description: 'Application that can anonymize your clipboard data',
+      description: 'A desktop application that can anonymize your clipboard data.',
       category: 'desktop',
       technologies: ['Java', 'JavaFX'],
       links: { demo: '#', source: 'https://github.com/krzysztofplociennik/copy-paste-anonymizer' }
