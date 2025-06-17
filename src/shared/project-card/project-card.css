@@ -301,6 +301,10 @@
   background: linear-gradient(135deg, #22c55e, #16a34a);
 }
 
+.download-link:hover {
+  background: linear-gradient(135deg, #f79926, #ef8c14);
+}
+
 .source-link:hover {
   background: linear-gradient(135deg, #3b82f6, #1d4ed8);
 }
