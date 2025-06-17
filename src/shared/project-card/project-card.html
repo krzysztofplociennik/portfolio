@@ -38,9 +38,20 @@
       </div>
     </div>
 
+    <div *ngIf="project.compatibility" class="project-compatibility-section">
+      <h4 class="montserrat">Compatibility:</h4>
+      <div class="project-compatibility">
+        <span *ngFor="let systems of project.compatibility" class="tech-tag montserrat">
+          {{ systems }}
+        </span>
+      </div>
+    </div>
+
     <div class="project-meta" *ngIf="project.status">
       <div class="meta-item montserrat">
-        <strong>Status:</strong> 
+        <span class="status-label">
+          <strong class="status-label">Status:</strong> 
+        </span>
         <span class="status-badge" [class]="'status-' + project.status">{{ project.status }}</span>
       </div>
     </div>
@@ -52,17 +63,17 @@
          target="_blank">
         <span>🚀</span> Live Demo
       </a>
+      <a *ngIf="project.links.download" 
+         [href]="project.links.download" 
+         class="project-link download-link montserrat"
+         target="_blank">
+        <span>🚀</span> Download
+      </a>
       <a *ngIf="project.links.source" 
          [href]="project.links.source" 
          class="project-link source-link montserrat"
          target="_blank">
         <span>📁</span> Source Code
-      </a>
-      <a *ngIf="project.links.case_study" 
-         [href]="project.links.case_study" 
-         class="project-link case-study-link montserrat"
-         target="_blank">
-        <span>📄</span> Case Study
       </a>
     </div>
   </div>

@@ -11,7 +11,7 @@ import { Project } from '../../../shared/project-card/project.model';
 })
 export class Projects implements AfterViewInit {
   
-  @Input() sectionTitle: string = 'Featured Side Projects';
+  @Input() sectionTitle: string = 'Side Projects';
   @Input() sectionSubtitle: string = 'Explore some of my recent work in Java development and web applications';
   @Input() projects: Project[] = [
     {
@@ -20,7 +20,9 @@ export class Projects implements AfterViewInit {
       description: 'A side project that serves as a personal collection of handy tips related to tech topics.',
       category: 'web',
       technologies: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL'],
-      links: { demo: 'https://inkodemo.vercel.app/search-articles', source: 'https://github.com/krzysztofplociennik/inko-backend' }
+      links: { demo: 'https://inkodemo.vercel.app/search-articles', source: 'https://github.com/krzysztofplociennik/inko-backend' },
+      imageUrl: 'assets/images/png/inko.png',
+      status: 'in-progress'
     },
     {
       id: 2,
@@ -28,7 +30,9 @@ export class Projects implements AfterViewInit {
       description: 'File Generator',
       category: 'web',
       technologies: ['Angular'],
-      links: { demo: 'https://custom-size-file.vercel.app/', source: 'https://github.com/krzysztofplociennik/custom-size-file' }
+      links: { demo: 'https://custom-size-file.vercel.app/', source: 'https://github.com/krzysztofplociennik/custom-size-file' },
+      imageUrl: 'assets/images/png/csf.png',
+      status: 'in-progress'
     },
     {
       id: 3,
@@ -36,9 +40,13 @@ export class Projects implements AfterViewInit {
       description: 'A desktop application that can anonymize your clipboard data.',
       category: 'desktop',
       technologies: ['Java', 'JavaFX'],
-      links: { demo: '#', source: 'https://github.com/krzysztofplociennik/copy-paste-anonymizer' }
+      compatibility: ['Windows 10/11'],
+      links: { source: 'https://github.com/krzysztofplociennik/copy-paste-anonymizer', download: 'assets/cpa/cpa.zip' },
+      imageUrl: 'assets/images/png/cpa.png',
+      status: 'in-progress'
     }
   ];
+
   @Input() categories: string[] = ['all', 'java', 'web', 'microservices', 'api'];
 
   activeFilter: string = 'all';

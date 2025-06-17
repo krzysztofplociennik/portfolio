@@ -8,11 +8,13 @@ export interface Project {
     demo?: string;
     source?: string;
     case_study?: string;
+    download?: string;
   };
   featured?: boolean;
   
   longDescription?: string;
   features?: string[];
   imageUrl?: string;
+  compatibility?: string[];
   status?: 'completed' | 'in-progress' | 'planned';
 }

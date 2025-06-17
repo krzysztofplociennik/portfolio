@@ -1,12 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
-export interface SocialLink {
-  platform: string;
-  url: string;
-  icon: string;
-}
-
 export interface FooterLink {
   label: string;
   href: string;
@@ -25,28 +19,22 @@ export class Footer {
   @Input() email: string = 'krzysztofplociennik6@gmail.com';
   @Input() phone: string = '+48 603 093 744';
   @Input() location: string = 'Mikstat, Poland';
-  
-  @Input() socialLinks: SocialLink[] = [
-    { platform: 'LinkedIn', url: 'https://linkedin.com/in/yourprofile', icon: 'assets/images/svg/github-8-xxl.png' },
-    { platform: 'GitHub', url: 'https://github.com/yourusername', icon: '💻' },
-    { platform: 'Email', url: 'mailto:your.email@example.com', icon: '📧' }
-  ];
-  
+
   @Input() quickLinks: FooterLink[] = [
-    { label: 'Home', href: '#landing' },
+    { label: 'Home', href: '#' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' }
   ];
 
   currentYear = new Date().getFullYear();
 
-  onSocialClick(link: SocialLink): void {
-    if (link.platform === 'Email') {
-      window.location.href = link.url;
-    } else {
-      window.open(link.url, '_blank', 'noopener,noreferrer');
-    }
-  }
+  // onSocialClick(link: SocialLink): void {
+  //   if (link.platform === 'Email') {
+  //     window.location.href = link.url;
+  //   } else {
+  //     window.open(link.url, '_blank', 'noopener,noreferrer');
+  //   }
+  // }
 
   onQuickLinkClick(link: FooterLink): void {
     const target = document.querySelector(link.href);
