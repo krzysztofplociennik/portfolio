@@ -28,14 +28,6 @@ export class Footer {
 
   currentYear = new Date().getFullYear();
 
-  // onSocialClick(link: SocialLink): void {
-  //   if (link.platform === 'Email') {
-  //     window.location.href = link.url;
-  //   } else {
-  //     window.open(link.url, '_blank', 'noopener,noreferrer');
-  //   }
-  // }
-
   onQuickLinkClick(link: FooterLink): void {
     const target = document.querySelector(link.href);
     if (target) {

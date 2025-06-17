@@ -1,10 +1,10 @@
 .project-card {
   position: relative;
   border-radius: 16px;
-  overflow: hidden;
+  overflow: visible;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   min-height: 280px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -19,6 +19,7 @@
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
   background: rgba(255, 255, 255, 1);
   z-index: 10;
+  border-radius: 16px 16px 0px 0px;
 }
 
 .project-card.featured {
@@ -43,6 +44,7 @@
   font-weight: 600;
   flex-shrink: 0;
   transition: height 0.5s ease;
+  border-radius: 16px 16px 0px 0px;
 }
 
 .project-card.expanded .project-image {
@@ -123,8 +125,16 @@
   padding: 0 1.5rem;
   opacity: 0;
   max-height: 0;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(-20px);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  outline: 1px solid rgb(255, 255, 255);
+  overflow: hidden;
+  border-radius: 0px 0px 16px 16px;
 }
 
 .project-expanded-content.visible {
@@ -317,12 +327,29 @@
   background: #271b44;
 }
 
-.project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.3s; }
-.project-card:nth-child(4) { animation-delay: 0.4s; }
-.project-card:nth-child(5) { animation-delay: 0.5s; }
-.project-card:nth-child(6) { animation-delay: 0.6s; }
+.project-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.project-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.project-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.project-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.project-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.project-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 @media (max-width: 768px) {
   .project-card.featured {
@@ -362,4 +389,4 @@
   .project-title {
     font-size: 1.2rem;
   }
-} 
+}
