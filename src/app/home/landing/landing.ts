@@ -15,7 +15,7 @@ export class Landing implements AfterViewInit, OnInit {
   currentLanguage = 'en';
 
   @Input() name: string = 'Krzysztof Płóciennik';
-  @Input() profileImage: string = 'assets/images/png/test-cv-photo.png';
+  @Input() profileImage: string = 'assets/images/jpg/my-photo.jpg';
 
   constructor(private elementRef: ElementRef,
     private languageService: LanguageService
