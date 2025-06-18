@@ -3,13 +3,12 @@
 
     <div class="hero-image">
       <div class="profile-container">
-        <img id="photo" [src]="profileImage" [alt]="name + ' - ' + title" class="profile-image">
-
+        <img id="photo" [src]="profileImage" [alt]="name" class="profile-image">
       </div>
     </div>
 
     <div class="hero-text">
-      <h1 class="name montserrat"> {{ 'landing.greeting' | translate }} {{ name }}</h1>
+      <h1 class="name montserrat"> {{ name }}</h1>
       <h2 class="title montserrat">{{ 'landing.title' | translate }}</h2> 
     </div>
 

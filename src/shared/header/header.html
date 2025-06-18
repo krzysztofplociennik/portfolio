@@ -1,10 +1,10 @@
 <header class="sticky-header" id="stickyHeader">
 
   <div class="header-content">
-    <a href="#" class="logo">{{ logoText }}</a>
+    <a href="#" class="logo" (click)="onNavLinkClick({href: '#', label: ''}, $event)">{{ logoText }}</a>
 
     <nav class="nav-menu">
-      <a *ngFor="let link of navLinks" [href]="link.href" class="nav-link montserrat">
+      <a *ngFor="let link of navLinks" [href]="link.href" class="nav-link montserrat" (click)="onNavLinkClick(link, $event)">
         {{ link.label | translate }}
       </a>
     </nav>
@@ -21,7 +21,7 @@
   </div>
 
   <nav class="mobile-nav" id="mobileNav">
-    <a *ngFor="let link of navLinks" [href]="link.href" class="mobile-nav-link">
+    <a *ngFor="let link of navLinks" [href]="link.href" class="mobile-nav-link" (click)="onNavLinkClick(link, $event)">
       {{ link.label }}
     </a>
   </nav>

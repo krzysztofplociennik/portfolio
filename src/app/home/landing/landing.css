@@ -22,6 +22,7 @@
 .hero-text {
   color: white;
   text-align: center;
+  margin-left: 3rem;
 }
 
 .greeting {
@@ -67,6 +68,7 @@
 
 .hero-image {
   margin-top: 8rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;

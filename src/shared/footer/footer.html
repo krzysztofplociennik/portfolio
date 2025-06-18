@@ -15,7 +15,7 @@
         <h4 class="footer-heading montserrat">{{ 'footer.quick-links-label' | translate }}</h4>
         <ul class="links-list">
           <li *ngFor="let link of quickLinks">
-            <a (click)="onQuickLinkClick(link)" class="footer-link montserrat" [href]="link.href">
+            <a (click)="onQuickLinkClick(link, $event)" class="footer-link montserrat" [href]="link.href">
               {{ link.label | translate }}
             </a>
           </li>
@@ -54,12 +54,14 @@
         <h4 class="footer-heading montserrat">{{ 'footer.socials-label' | translate }}</h4>
         <div class="social-links">
 
-          <button class="social-link montserrat" [title]="'linkedin'" onclick="window.open('https://www.linkedin.com/in/krzysztof-plociennik/', '_blank')">
+          <button class="social-link montserrat" [title]="'linkedin'"
+            onclick="window.open('https://www.linkedin.com/in/krzysztof-plociennik/', '_blank')">
             <img src="assets/images/png/linkedin-3-xxl.png" class="cv-icon" alt="Download">
             <span class="social-label"> LinkedIn </span>
           </button>
 
-          <button class="social-link montserrat" [title]="'github'" onclick="window.open('https://github.com/krzysztofplociennik', '_blank')">
+          <button class="social-link montserrat" [title]="'github'"
+            onclick="window.open('https://github.com/krzysztofplociennik', '_blank')">
             <img src="assets/images/png/github-8-xxl.png" class="cv-icon" alt="Download">
             <span class="social-label"> GitHub </span>
           </button>
@@ -77,7 +79,8 @@
       </div>
       <div class="footer-tech">
         <p class="tech-text montserrat">
-          {{ 'footer.built-with1' | translate }} <span class="tech-highlight"> {{ 'footer.built-with2' | translate }} </span>
+          {{ 'footer.built-with1' | translate }} <span class="tech-highlight"> {{ 'footer.built-with2' | translate }}
+          </span>
         </p>
       </div>
     </div>

@@ -16,8 +16,10 @@
         "tools-category-title": "Narzędzia",
         "frontend-category-title": "Frontend",
         "viewCV": "Zobacz moje CV",
-        "summary-title": "Podsumowanie zawodowe",
-        "summary-text": "Jestem programistą Javy z 3-letnim doświadczeniem w tworzeniu oraz utrzymaniu aplikacji webowych wykorzystujących technologie Java + Spring Boot oraz Angular. Specjalizuję się w tworzeniu wydajnych rozwiązań backendowych z wykorzystaniem różnorodnych baz danych (MongoDB, Oracle), posiadam także praktyczne doświadczenie w rozwoju frontendu. W pracy wyróżnia mnie efektywna współpraca zespołowa, dbałość o wysoką jakość kodu oraz zaangażowanie w ciągły rozwój techniczny.",
+        "summary-title": "O mnie",
+        "summary-text1": "Jestem programistą z 3-letnim doświadczeniem w tworzeniu oraz utrzymaniu aplikacji webowych wykorzystujących technologie Java + Spring Boot.",
+        "summary-text2": "Specjalizuję się w tworzeniu wydajnych rozwiązań backendowych z wykorzystaniem różnorodnych baz danych (MongoDB, Oracle); posiadam także praktyczne doświadczenie w rozwoju frontendu.",
+        "summary-text3": "W pracy wyróżnia mnie efektywna współpraca zespołowa, dbałość o wysoką jakość kodu oraz zaangażowanie w ciągły rozwój techniczny.",
         "view-cv-button": "Zobacz moje CV"
     },
     "projects": {

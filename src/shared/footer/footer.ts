@@ -15,7 +15,7 @@ export interface FooterLink {
   styleUrl: './footer.css'
 })
 export class Footer {
-  
+
   @Input() name: string = 'Krzysztof Płóciennik';
   @Input() title: string = 'Java Developer';
   @Input() email: string = 'krzysztofplociennik6@gmail.com';
@@ -23,17 +23,41 @@ export class Footer {
   @Input() location: string = 'Mikstat, Poland';
 
   @Input() quickLinks: FooterLink[] = [
-    { label: 'footer.home-link-label', href: '#' },
+    { label: 'footer.home-link-label', href: '#home' },
     { label: 'footer.skills-link-label', href: '#skills' },
     { label: 'footer.projects-link-label', href: '#projects' }
   ];
 
   currentYear = new Date().getFullYear();
 
-  onQuickLinkClick(link: FooterLink): void {
-    const target = document.querySelector(link.href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+onQuickLinkClick(link: FooterLink, event?: Event): void {
+  event?.preventDefault();
+  
+  if (link.href === '#' || link.href === '#home') {
+    window.scrollTo({ 
+      top: 0, 
+      behavior: 'smooth' 
+    });
+    return;
+  }
+  
+  const targetId = link.href.replace('#', '');
+  const target = document.getElementById(targetId);
+  
+  if (target) {
+    target.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  } else {
+    console.warn(`Target element with id "${targetId}" not found`);
+    const fallbackTarget = document.querySelector(link.href);
+    if (fallbackTarget) {
+      fallbackTarget.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   }
+}
 }

@@ -25,7 +25,7 @@ export class Header implements AfterViewInit, OnInit {
     private languageService: LanguageService
   ) { }
 
-    async ngOnInit() {
+  async ngOnInit() {
     await this.languageService.initialize();
     this.currentLanguage = this.languageService.getCurrentLanguage();
   }
@@ -34,11 +34,11 @@ export class Header implements AfterViewInit, OnInit {
     this.initStickyHeader();
   }
 
-    async toggleLanguage() {
+  async toggleLanguage() {
     const newLang = this.currentLanguage === 'en' ? 'pl' : 'en';
     await this.languageService.changeLanguage(newLang);
     this.currentLanguage = newLang;
-    
+
     if ('vibrate' in navigator) {
       navigator.vibrate(50);
     }
@@ -91,14 +91,6 @@ export class Header implements AfterViewInit, OnInit {
       });
     }
 
-    const mobileNavLinks = this.elementRef.nativeElement.querySelectorAll('.mobile-nav-link, .nav-link');
-    mobileNavLinks.forEach((link: HTMLAnchorElement) => {
-      link.addEventListener('click', () => {
-        mobileNav?.classList.remove('active');
-        mobileMenuBtn?.classList.remove('active');
-      });
-    });
-
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
       if (!stickyHeader.contains(target)) {
@@ -106,6 +98,44 @@ export class Header implements AfterViewInit, OnInit {
         mobileMenuBtn?.classList.remove('active');
       }
     });
+  }
+
+  onNavLinkClick(link: NavLink, event: Event): void {
+    event.preventDefault();
+
+    if (link.href === '#' || link.href === '#home') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      return;
+    }
+
+    const targetId = link.href.replace('#', '');
+    const target = document.getElementById(targetId);
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      console.warn(`Target element with id "${targetId}" not found`);
+      const fallbackTarget = document.querySelector(link.href);
+      if (fallbackTarget) {
+        fallbackTarget.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+
+    const mobileNav = this.elementRef.nativeElement.querySelector('#mobileNav');
+    const mobileMenuBtn = this.elementRef.nativeElement.querySelector('#mobileMenuBtn');
+    if (mobileNav && mobileMenuBtn) {
+      mobileNav.classList.remove('active');
+      mobileMenuBtn.classList.remove('active');
+    }
   }
 }
 
