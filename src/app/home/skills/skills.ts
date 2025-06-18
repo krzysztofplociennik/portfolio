@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, AfterViewInit, ElementRef, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { TranslatePipe } from '../../../shared/language/translate.pipe';
 
 interface SkillCategory {
   id: string;
@@ -9,7 +10,8 @@ interface SkillCategory {
 
 @Component({
   selector: 'app-skills',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
+  providers: [TranslatePipe],
   templateUrl: './skills.html',
   styleUrl: './skills.css'
 })

@@ -1,32 +1,54 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
+import { TranslatePipe } from '../language/translate.pipe';
+import { LanguageService } from '../language/language.service';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
+  providers: [TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
-export class Header implements AfterViewInit {
+export class Header implements AfterViewInit, OnInit {
+
+  currentLanguage = 'en';
 
   @Input() logoText: string = 'KP';
   @Input() ctaText: string = 'Get In Touch';
   @Input() navLinks: NavLink[] = [
-    { href: '#skills', label: 'Skills' },
-    { href: '#projects', label: 'Projects' }
+    { href: '#skills', label: 'header.skills-label' },
+    { href: '#projects', label: 'header.projects-label' }
   ];
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef,
+    private languageService: LanguageService
+  ) { }
+
+    async ngOnInit() {
+    await this.languageService.initialize();
+    this.currentLanguage = this.languageService.getCurrentLanguage();
+  }
 
   ngAfterViewInit() {
     this.initStickyHeader();
+  }
+
+    async toggleLanguage() {
+    const newLang = this.currentLanguage === 'en' ? 'pl' : 'en';
+    await this.languageService.changeLanguage(newLang);
+    this.currentLanguage = newLang;
+    
+    if ('vibrate' in navigator) {
+      navigator.vibrate(50);
+    }
   }
 
   private initStickyHeader(): void {
     const stickyHeader = this.elementRef.nativeElement.querySelector('#stickyHeader');
     const mobileMenuBtn = this.elementRef.nativeElement.querySelector('#mobileMenuBtn');
     const mobileNav = this.elementRef.nativeElement.querySelector('#mobileNav');
-    
+
     if (!stickyHeader) return;
 
     let lastScrollY = 0;
@@ -34,7 +56,7 @@ export class Header implements AfterViewInit {
 
     const updateHeader = () => {
       const scrollY = window.scrollY;
-      
+
       if (scrollY < lastScrollY || scrollY < 100) {
         stickyHeader.classList.add('visible');
       } else {
@@ -44,7 +66,7 @@ export class Header implements AfterViewInit {
           mobileMenuBtn?.classList.remove('active');
         }
       }
-      
+
       lastScrollY = scrollY;
       ticking = false;
     };

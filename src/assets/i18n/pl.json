@@ -1,0 +1,54 @@
+{
+    "header": {
+        "skills-label": "Umiejętności",
+        "projects-label": "Projekty"
+    },
+    "landing": {
+        "greeting": "Cześć, jestem",
+        "title": "Programista Java",
+        "description": "ZXC"
+    },
+    "skills": {
+        "title": "Umiejętności",
+        "subtitle": "Przegląd moich umiejętności oraz doświadczenia komercyjnego jako Java Developer",
+        "backend-category-title": "Backend",
+        "database-category-title": "Bazy danych",
+        "tools-category-title": "Narzędzia",
+        "frontend-category-title": "Frontend",
+        "viewCV": "Zobacz moje CV",
+        "summary-title": "Podsumowanie zawodowe",
+        "summary-text": "Jestem programistą Javy z 3-letnim doświadczeniem w tworzeniu oraz utrzymaniu aplikacji webowych wykorzystujących technologie Java + Spring Boot oraz Angular. Specjalizuję się w tworzeniu wydajnych rozwiązań backendowych z wykorzystaniem różnorodnych baz danych (MongoDB, Oracle), posiadam także praktyczne doświadczenie w rozwoju frontendu. W pracy wyróżnia mnie efektywna współpraca zespołowa, dbałość o wysoką jakość kodu oraz zaangażowanie w ciągły rozwój techniczny.",
+        "view-cv-button": "Zobacz moje CV"
+    },
+    "projects": {
+        "section-title": "Osobiste projekty",
+        "section-subtitle": "Zapoznaj się z moimi ostatnimi projektami",
+        "project-type-web": "APLIKACJA WEBOWA",
+        "project-type-desktop": "APLIKACJA DESKTOPOWA",
+        "project-one-description": "Aplikacja webowa, która służy jako kolekcja przydatnych informacji na temat programowania lub problemów z szeroko pojętej dziedziny informatyki.",
+        "technologies-label": "Technologie:",
+        "status-label": "Status:",
+        "status-in-progress-label": "W trakcie",
+        "status-completed-label": "Zakończony",
+        "status-planned-label": "Planowany",
+        "live-demo-label": "Demo",
+        "download-label": "Pobierz",
+        "source-code-label": "Kod źródłowy",
+        "project-two-description": "Aplikacja webowa, która generuje plik (obecnie dostępne są typy: pdf, txt i docx) o konkretnym rozmiarze podanym przez użytkownika.",
+        "project-three-description": "Aplikacja desktopowa, która anonimizuje (tj. podmienia na inne) wybrane dane, które użytkownik kopiuje do schowka.",
+        "project-compatibility-label": "Zgodność:"
+    },
+    "footer": {
+        "brand-title": "Programista Java",
+        "brand-description": "Pasjonat tworzenia skalowalnych aplikacji enterprise i nowoczesnych rozwiązań webowych.",
+        "quick-links-label": "Szybkie linki",
+        "home-link-label": "Strona główna",
+        "skills-link-label": "Umiejętności",
+        "projects-link-label": "Projekty",
+        "get-in-touch-label": "Kontakt",
+        "socials-label": "Gdzie mnie znaleźć",
+        "copyright": "© 2025 Krzysztof Płóciennik. Wszystkie prawa zastrzeżone.",
+        "built-with1": "Stworzone przy pomocy ",
+        "built-with2": "Angulara"
+    }
+}

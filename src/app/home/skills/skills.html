@@ -1,39 +1,76 @@
 <section id="skills" class="skills-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title montserrat">Skills & Expertise</h2>
+      <h2 class="section-title montserrat">{{ 'skills.title' | translate }}</h2>
       <p class="section-subtitle montserrat">
         An overview of my technical skills and professional experience as a Java developer
       </p>
     </div>
 
     <div class="skills-container">
-      <div *ngFor="let category of skillCategories; let i = index" class="skill-category">
+
+      <div class="skill-category">
         <h3 class="category-title montserrat">
-          {{ category.title }}
+          {{ 'skills.backend-category-title' | translate }}
         </h3>
         <div class="skills-list">
-          <span *ngFor="let skill of category.skills; let j = index" class="skill-tag"
-            [style.animation-delay.s]="j * 0.1">
-            {{ skill }}
-          </span>
+          <span class="skill-tag">Java 11+</span>
+          <span class="skill-tag">Spring Boot</span>
+          <span class="skill-tag">Hibernate</span>
+          <span class="skill-tag">JUnit</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Maven</span>
+          <span class="skill-tag">Gradle</span>
         </div>
       </div>
+
+      <div class="skill-category">
+        <h3 class="category-title montserrat">
+          {{ 'skills.database-category-title' | translate }}
+        </h3>
+        <div class="skills-list">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Oracle</span>
+          <span class="skill-tag">MongoDB</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3 class="category-title montserrat">
+          {{ 'skills.tools-category-title' | translate }}
+        </h3>
+        <div class="skills-list">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">IntelliJ IDEA</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Windows</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">JIRA</span>
+        </div>
+      </div>
+
+            <div class="skill-category">
+        <h3 class="category-title montserrat">
+          {{ 'skills.frontend-category-title' | translate }}
+        </h3>
+        <div class="skills-list">
+          <span class="skill-tag">Angular</span>
+          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">pdfmake</span>
+        </div>
+      </div>
+
     </div>
 
     <div class="professional-summary">
-      <h3 class="summary-title montserrat">Professional Summary</h3>
+      <h3 class="summary-title montserrat">{{ 'skills.summary-title' | translate }}</h3>
       <p class="summary-text montserrat">
-        I am a Junior Java Developer with 3 years of experience in developing and maintaining web applications based on
-        Java + Spring Boot and Angular. <br>
-        I have strong backend skills and experience working with various databases (MongoDB, Oracle), as well as
-        frontend development experience. <br>
-        I value effective teamwork, attention to code quality, and continuous learning of new technologies.
+        {{ 'skills.summary-text' | translate }}
       </p>
 
       <button class="cv-button montserrat" (click)="openCVInBrowser()">
         <img src="assets/images/svg/open_in_new.svg" class="cv-icon" alt="Download">
-        <span class="montserrat">View my CV</span>
+        <span class="montserrat"> {{ 'skills.view-cv-button' | translate }} </span>
       </button>
 
     </div>

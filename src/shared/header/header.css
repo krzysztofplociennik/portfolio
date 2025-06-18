@@ -169,3 +169,174 @@
     padding: 0.75rem 1rem;
   }
 }
+
+/* Sliding Language Toggle */
+.lang-toggle-slider {
+  position: relative;
+  background: rgba(4, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 0.3rem;
+  width: 80px;
+  height: 35px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.lang-toggle-slider:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.lang-toggle-slider:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.toggle-slider {
+  position: absolute;
+  top: .15rem;
+  left: 0.25rem;
+  width: 32px;
+  height: 29px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #05165f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lang-toggle-slider.pl .toggle-slider {
+  transform: translateX(38px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.toggle-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  pointer-events: none;
+  gap: 1.2rem;
+  color: rgba(0, 0, 0, 0.95);
+}
+
+.toggle-en {
+  margin-left: -0.12rem;
+  margin-right: 0.02rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Mobile Language Toggle */
+.mobile-lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1rem;
+}
+
+.mobile-lang-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.lang-toggle-slider.mobile {
+  width: 70px;
+  height: 32px;
+}
+
+.lang-toggle-slider.mobile .toggle-slider {
+  width: 28px;
+  height: 26px;
+  top: 0.2rem;
+  left: 0.2rem;
+}
+
+.lang-toggle-slider.mobile.pl .toggle-slider {
+  transform: translateX(32px);
+}
+
+.lang-toggle-slider.mobile .toggle-labels {
+  padding: 0 0.7rem;
+  font-size: 0.7rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .lang-toggle-slider {
+    scale: 0.9;
+  }
+  
+  .header-content {
+    gap: 0.5rem;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+}
+
+/* Animation enhancements */
+@keyframes slideToggle {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(38px);
+  }
+}
+
+.lang-toggle-slider.pl .toggle-slider {
+  animation: slideToggle 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Accessibility improvements */
+.lang-toggle-slider:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.lang-toggle-slider[aria-pressed="true"] .toggle-slider {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Hover effects for the slider itself */
+.toggle-slider {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-toggle-slider:hover .toggle-slider {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

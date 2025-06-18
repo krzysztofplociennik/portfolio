@@ -1,23 +1,28 @@
-    <header class="sticky-header" id="stickyHeader">
-      
-      <div class="header-content">
-        <a href="#" class="logo">{{ logoText }}</a>
-        
-        <nav class="nav-menu">
-          <a *ngFor="let link of navLinks" 
-             [href]="link.href" 
-             class="nav-link montserrat">
-            {{ link.label }}
-          </a>
-        </nav>
+<header class="sticky-header" id="stickyHeader">
 
+  <div class="header-content">
+    <a href="#" class="logo">{{ logoText }}</a>
+
+    <nav class="nav-menu">
+      <a *ngFor="let link of navLinks" [href]="link.href" class="nav-link montserrat">
+        {{ link.label | translate }}
+      </a>
+    </nav>
+
+    <div class="lang-toggle-slider" [class.pl]="currentLanguage === 'pl'" (click)="toggleLanguage()"
+      title="Switch Language">
+      <div class="toggle-slider montserrat"></div>
+      <div class="toggle-labels">
+        <span class="montserrat toggle-en">EN</span>
+        <span class="montserrat toggle-pl">PL</span>
       </div>
-      
-      <nav class="mobile-nav" id="mobileNav">
-        <a *ngFor="let link of navLinks" 
-           [href]="link.href" 
-           class="mobile-nav-link">
-          {{ link.label }}
-        </a>
-      </nav>
-    </header>
+    </div>
+
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a *ngFor="let link of navLinks" [href]="link.href" class="mobile-nav-link">
+      {{ link.label }}
+    </a>
+  </nav>
+</header>

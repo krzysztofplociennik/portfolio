@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { TranslatePipe } from '../language/translate.pipe';
 
 export interface FooterLink {
   label: string;
@@ -8,7 +9,8 @@ export interface FooterLink {
 
 @Component({
   selector: 'app-footer',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
+  providers: [TranslatePipe],
   templateUrl: './footer.html',
   styleUrl: './footer.css'
 })
@@ -21,9 +23,9 @@ export class Footer {
   @Input() location: string = 'Mikstat, Poland';
 
   @Input() quickLinks: FooterLink[] = [
-    { label: 'Home', href: '#' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' }
+    { label: 'footer.home-link-label', href: '#' },
+    { label: 'footer.skills-link-label', href: '#skills' },
+    { label: 'footer.projects-link-label', href: '#projects' }
   ];
 
   currentYear = new Date().getFullYear();

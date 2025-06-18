@@ -1,0 +1,54 @@
+{
+    "header": {
+        "skills-label": "Skills",
+        "projects-label": "Projects"
+    },
+    "landing": {
+        "greeting": "Hi, I'm",
+        "title": "Java Developer",
+        "description": "Passionate Java developer with expertise..."
+    },
+    "skills": {
+        "title": "Skills & Expertise",
+        "subtitle": "An overview of my technical skills and professional experience as a Java developer",
+        "backend-category-title": "Backend",
+        "database-category-title": "Database",
+        "tools-category-title": "Tools",
+        "frontend-category-title": "Frontend",
+        "viewCV": "View my CV",
+        "summary-title": "Professional Summary",
+        "summary-text": " I am a Junior Java Developer with 3 years of experience in developing and maintaining web applications based on Java + Spring Boot and Angular.\n I have strong backend skills and experience working with various databases (MongoDB, Oracle), as well as frontend development experience.\n I value effective teamwork, attention to code quality, and continuous learning of new technologies.",
+        "view-cv-button": "View my CV"
+    },
+    "projects": {
+        "section-title": "Side Projects",
+        "section-subtitle": "Explore some of my recent work in Java development and web applications",
+        "project-type-web": "WEB APPLICATION",
+        "project-type-desktop": "DESKTOP APPLICATION",
+        "project-one-description": "A web application that serves as a personal collection of handy tips related to tech topics.",
+        "technologies-label": "Technologies:",
+        "status-label": "Status:",
+        "status-in-progress-label": "In-Progress",
+        "status-completed-label": "Completed",
+        "status-planned-label": "Planned",
+        "live-demo-label": "Live Demo",
+        "download-label": "Download",
+        "source-code-label": "Source Code",
+        "project-two-description": "File generator",
+        "project-three-description": "A desktop application that can anonymize your clipboard data.",
+        "project-compatibility-label": "Compatibility:"
+    },
+    "footer": {
+        "brand-title": "Java Developer",
+        "brand-description": "Passionate about building scalable enterprise applications and modern web solutions.",
+        "quick-links-label": "Quick Links",
+        "home-link-label": "Home",
+        "skills-link-label": "Skills",
+        "projects-link-label": "Projects",
+        "get-in-touch-label": "Get In Touch",
+        "socials-label": "Socials",
+        "copyright": "© 2025 Krzysztof Płóciennik. All rights reserved.",
+        "built-with1": "Built with ",
+        "built-with2": "Angular"
+    }
+}

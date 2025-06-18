@@ -16,5 +16,6 @@ export interface Project {
   features?: string[];
   imageUrl?: string;
   compatibility?: string[];
-  status?: 'completed' | 'in-progress' | 'planned';
+  statusLabel?: string;
+  statusValue?: string;
 }

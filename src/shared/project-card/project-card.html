@@ -12,8 +12,8 @@
 
   <div class="project-basic-info">
     <h3 class="project-title montserrat">{{ project.title }}</h3>
-    <p class="project-category montserrat">{{ project.category }}</p>
-    <p class="project-description-short montserrat">{{ project.description }}</p>
+    <p class="project-category montserrat">{{ project.category | translate }}</p>
+    <p class="project-description-short montserrat">{{ project.description | translate }}</p>
   </div>
 
   <div class="project-expanded-content" [class.visible]="isExpanded">
@@ -30,7 +30,7 @@
     </div>
 
     <div class="project-tech-section">
-      <h4 class="montserrat">Technologies:</h4>
+      <h4 class="montserrat"> {{ 'projects.technologies-label' | translate }} </h4>
       <div class="project-tech">
         <span *ngFor="let tech of project.technologies" class="tech-tag montserrat">
           {{ tech }}
@@ -39,7 +39,7 @@
     </div>
 
     <div *ngIf="project.compatibility" class="project-compatibility-section">
-      <h4 class="montserrat">Compatibility:</h4>
+      <h4 class="montserrat"> {{ 'projects.project-compatibility-label' | translate }} </h4>
       <div class="project-compatibility">
         <span *ngFor="let systems of project.compatibility" class="tech-tag montserrat">
           {{ systems }}
@@ -47,12 +47,12 @@
       </div>
     </div>
 
-    <div class="project-meta" *ngIf="project.status">
+    <div class="project-meta" *ngIf="project.statusLabel && project.statusValue">
       <div class="meta-item montserrat">
         <span class="status-label">
-          <strong class="status-label">Status:</strong> 
+          <strong class="status-label"> {{ 'projects.status-label' | translate }} </strong> 
         </span>
-        <span class="status-badge" [class]="'status-' + project.status">{{ project.status }}</span>
+        <span class="status-badge" [class]="'status-' + project.statusLabel"> {{ project.statusValue | translate }} </span>
       </div>
     </div>
 
@@ -61,19 +61,19 @@
          [href]="project.links.demo" 
          class="project-link demo-link montserrat"
          target="_blank">
-        <span>🚀</span> Live Demo
+        <span>🚀</span> {{ 'projects.live-demo-label' | translate }}
       </a>
       <a *ngIf="project.links.download" 
          [href]="project.links.download" 
          class="project-link download-link montserrat"
          target="_blank">
-        <span>🚀</span> Download
+        <span>💾</span> {{ 'projects.download-label' | translate }}
       </a>
       <a *ngIf="project.links.source" 
          [href]="project.links.source" 
          class="project-link source-link montserrat"
          target="_blank">
-        <span>📁</span> Source Code
+        <span>📁</span> {{'projects.source-code-label' | translate }}
       </a>
     </div>
   </div>

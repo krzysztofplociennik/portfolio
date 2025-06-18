@@ -1,13 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
+import { TranslatePipe } from '../../../shared/language/translate.pipe';
+import { LanguageService } from '../../../shared/language/language.service';
 
 @Component({
   selector: 'app-landing',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
+  providers: [TranslatePipe],
   templateUrl: './landing.html',
   styleUrl: './landing.css'
 })
-export class Landing implements AfterViewInit {
+export class Landing implements AfterViewInit, OnInit {
+
+  currentLanguage = 'en';
 
   @Input() name: string = 'Krzysztof Płóciennik';
   @Input() title: string = 'Java Developer';
@@ -15,7 +20,14 @@ export class Landing implements AfterViewInit {
   @Input() profileImage: string = 'assets/images/png/test-cv-photo.png';
   @Input() techBadges: string[] = ['Java', 'Spring Boot', 'Angular'];
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef,
+    private languageService: LanguageService
+  ) {}
+
+  async ngOnInit() {
+    await this.languageService.initialize();
+    this.currentLanguage = this.languageService.getCurrentLanguage();
+  }
 
   ngAfterViewInit() {
     this.initSmoothScrolling();
