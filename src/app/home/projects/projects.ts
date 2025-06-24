@@ -19,13 +19,13 @@ export class Projects implements AfterViewInit, OnInit, OnChanges {
   projects: Project[] = [];
 
   constructor(
-    private elementRef: ElementRef, 
+    private elementRef: ElementRef,
     private languageService: LanguageService
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('change');
-    
+
   }
 
   async ngOnInit() {
@@ -36,49 +36,49 @@ export class Projects implements AfterViewInit, OnInit, OnChanges {
 
   private loadProjectsData() {
     this.projects = [
-    {
-      id: 1,
-      title: 'Inko',
-      description: 'projects.project-one-description',
-      category: 'projects.project-type-web',
-      technologies: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL'],
-      links: { 
-        demo: 'https://inkodemo.vercel.app/search-articles', 
-        source: 'https://github.com/krzysztofplociennik/inko-backend' 
+      {
+        id: 1,
+        title: 'Inko',
+        description: 'projects.project-one-description',
+        category: 'projects.project-type-web',
+        technologies: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL'],
+        links: {
+          demo: 'https://inkodemo.vercel.app/search-articles',
+          source: 'https://github.com/krzysztofplociennik/inko-backend'
+        },
+        imageUrl: 'assets/images/png/inko.png',
+        statusLabel: 'in-progress',
+        statusValue: 'projects.status-in-progress-label'
       },
-      imageUrl: 'assets/images/png/inko.png',
-      statusLabel: 'in-progress',
-      statusValue: 'projects.status-in-progress-label'
-    },
-    {
-      id: 2,
-      title: 'Custom Size File Generator',
-      description: 'projects.project-two-description',
-      category: 'projects.project-type-web',
-      technologies: ['Angular'],
-      links: { 
-        demo: 'https://custom-size-file.vercel.app/', 
-        source: 'https://github.com/krzysztofplociennik/custom-size-file' 
+      {
+        id: 2,
+        title: 'Custom Size File Generator',
+        description: 'projects.project-two-description',
+        category: 'projects.project-type-web',
+        technologies: ['Angular'],
+        links: {
+          demo: 'https://custom-size-file.vercel.app/',
+          source: 'https://github.com/krzysztofplociennik/custom-size-file'
+        },
+        imageUrl: 'assets/images/png/csf.png',
+        statusLabel: 'in-progress',
+        statusValue: 'projects.status-in-progress-label'
       },
-      imageUrl: 'assets/images/png/csf.png',
-      statusLabel: 'in-progress',
-      statusValue: 'projects.status-in-progress-label'
-    },
-    {
-      id: 3,
-      title: 'Copy-Paste Anonymizer',
-      description: 'projects.project-three-description',
-      category: 'projects.project-type-desktop',
-      technologies: ['Java', 'JavaFX'],
-      compatibility: ['Windows 10/11'],
-      links: { 
-        source: 'https://github.com/krzysztofplociennik/copy-paste-anonymizer', 
-        download: 'assets/cpa/cpa.zip' 
-      },
-      imageUrl: 'assets/images/png/cpa.png',
-      statusLabel: 'in-progress',
-      statusValue: 'projects.status-in-progress-label'
-    }
+      {
+        id: 3,
+        title: 'Copy-Paste Anonymizer',
+        description: 'projects.project-three-description',
+        category: 'projects.project-type-desktop',
+        technologies: ['Java', 'JavaFX'],
+        compatibility: ['Windows 10/11'],
+        links: {
+          source: 'https://github.com/krzysztofplociennik/copy-paste-anonymizer',
+          download: 'assets/cpa/cpa.zip'
+        },
+        imageUrl: 'assets/images/png/cpa2.png',
+        statusLabel: 'in-progress',
+        statusValue: 'projects.status-in-progress-label'
+      }
     ];
   }
 
