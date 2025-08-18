@@ -5,19 +5,19 @@
     },
     "landing": {
         "greeting": "Hi, I'm",
-        "title": "Java Developer",
-        "description": "Passionate Java developer with expertise..."
+        "title": "Java Programmer",
+        "description": "Passionate Java programmer with expertise..."
     },
     "skills": {
         "title": "Skills & Expertise",
-        "subtitle": "An overview of my technical skills and professional experience as a Java developer",
+        "subtitle": "An overview of my technical skills and professional experience as a Java programmer",
         "backend-category-title": "Backend",
         "database-category-title": "Database",
         "tools-category-title": "Tools",
         "frontend-category-title": "Frontend",
         "viewCV": "View my CV",
         "summary-title": "About me",
-        "summary-text1": "I am a Java Developer with 3 years of experience in developing and maintaining web applications based on Java + Spring Boot.",
+        "summary-text1": "I am a Java programmer with over 3 years of experience in developing and maintaining web applications based on Java + Spring Boot.",
         "summary-text2": "I have strong backend skills and experience working with various databases (MongoDB, Oracle), as well as frontend development experience.",
         "summary-text3": "I value effective teamwork, attention to code quality, and continuous learning of new technologies.",
         "view-cv-button": "View my CV"
@@ -41,7 +41,7 @@
         "project-compatibility-label": "Compatibility:"
     },
     "footer": {
-        "brand-title": "Java Developer",
+        "brand-title": "Java programmer",
         "brand-description": "Passionate about building scalable enterprise applications and modern web solutions.",
         "quick-links-label": "Quick Links",
         "home-link-label": "Home",
