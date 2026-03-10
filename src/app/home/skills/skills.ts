@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { TranslatePipe } from '../../../shared/language/translate.pipe';
+import { LanguageService } from '../../../shared/language/language.service';
 
 interface SkillCategory {
   id: string;
@@ -17,8 +18,10 @@ interface SkillCategory {
 })
 export class Skills implements AfterViewInit {
 
-  cvPathPL: string = 'assets/pdf/Krzysztof-Plociennik-CV-PL.pdf';
-  cvPathEN: string = 'assets/pdf/Krzysztof-Plociennik-CV-EN.pdf';
+  cvPaths: Record<string, string> = {
+    pl: 'assets/pdf/Krzysztof-Plociennik-CV-PL.pdf',
+    en: 'assets/pdf/Krzysztof-Plociennik-CV-EN.pdf',
+  };
 
   skillCategories: SkillCategory[] = [
     {
@@ -43,7 +46,10 @@ export class Skills implements AfterViewInit {
     },
   ];
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(
+    private elementRef: ElementRef,
+    private languageService: LanguageService
+  ) {}
 
   ngAfterViewInit() {
     this.initScrollAnimations();
@@ -51,7 +57,7 @@ export class Skills implements AfterViewInit {
   }
 
   openCVInBrowser(): void {
-    const cvUrl = this.cvPathPL;
+    const cvUrl = this.cvPaths[this.languageService.getCurrentLanguage()] ?? this.cvPaths['pl'];
     window.open(cvUrl, '_blank');
   }
 
