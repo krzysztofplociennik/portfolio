@@ -57,7 +57,7 @@ export class Skills implements AfterViewInit {
   }
 
   openCVInBrowser(): void {
-    const cvUrl = this.cvPaths[this.languageService.getCurrentLanguage()] ?? this.cvPaths['pl'];
+    const cvUrl = this.cvPaths[this.languageService.getCurrentLanguage()] ?? this.cvPaths['en'];
     window.open(cvUrl, '_blank');
   }
 
