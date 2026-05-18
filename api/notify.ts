@@ -17,7 +17,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
-  const { referrer, language, device } = req.body;
+  const ip = req.headers['x-forwarded-for'] as string || 'unknown';
+
+  const geoRes = await fetch(`http://ip-api.com/json/${ip}`);
+  const geo = await geoRes.json();
+
+  const { referrer, language, device, screenResolution, timezone, browser } = req.body;
 
   const payload = {
     content: null,
@@ -26,9 +31,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       color: 0x5865F2,
       fields: [
         { name: '🕐 Time', value: new Date().toLocaleString('pl-PL'), inline: true },
+        { name: '🌍 Country', value: geo.country || 'unknown', inline: true },
+        { name: '🏙️ City', value: geo.city || 'unknown', inline: true },
         { name: '🌐 Language', value: language || 'unknown', inline: true },
         { name: '📱 Device', value: device || 'unknown', inline: true },
+        { name: '🖥️ Browser', value: browser || 'unknown', inline: true },
+        { name: '📐 Screen', value: screenResolution || 'unknown', inline: true },
+        { name: '🕰️ Timezone', value: timezone || 'unknown', inline: true },
         { name: '📍 Referrer', value: referrer || 'Direct', inline: true },
+        { name: '🌐 IP', value: ip, inline: true },
       ],
       timestamp: new Date().toISOString()
     }]
