@@ -157,15 +157,15 @@
   .nav-menu {
     display: none;
   }
-  
+
   .mobile-menu-btn {
     display: flex;
   }
-  
+
   .header-cta {
     display: none;
   }
-  
+
   .header-content {
     padding: 0.75rem 1rem;
   }
@@ -298,11 +298,11 @@
   .lang-toggle-slider {
     scale: 0.9;
   }
-  
+
   .header-content {
     gap: 0.5rem;
   }
-  
+
   .nav-menu {
     display: none;
   }
@@ -313,6 +313,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(38px);
   }
@@ -340,4 +341,18 @@
 .lang-toggle-slider:hover .toggle-slider {
   background: rgba(255, 255, 255, 1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header-trigger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 999;
+}
+
+.header-trigger:hover+.sticky-header,
+.sticky-header:hover {
+  transform: translateY(0) !important;
 }

@@ -161,3 +161,10 @@
     font-size: 2rem;
   }
 }
+
+:host {
+  display: block;
+  height: 100vh;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
