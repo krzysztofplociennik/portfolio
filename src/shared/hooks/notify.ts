@@ -3,7 +3,10 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 const WEBHOOK_URL = process.env['DISCORD_WEBHOOK_URL']!;
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== 'POST') return res.status(405).end();
+  if (req.method !== 'POST') {
+    res.status(405).end();
+    return;
+  }
 
   const { referrer, language, device } = req.body;
 
