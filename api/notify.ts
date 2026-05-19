@@ -24,6 +24,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const { referrer, language, device, screenResolution, timezone, browser } = req.body;
 
+  if (isSelfVisit(ip, geo.city, device, language, referrer)) {
+    res.status(200).json({ ok: true, skipped: true });
+    return;
+  }
+
   const payload = {
     content: null,
     embeds: [{
@@ -52,4 +57,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   });
 
   res.status(200).json({ ok: true });
+}
+
+function isSelfVisit(ip: string, city: string, device: string, language: string, referrer: string): boolean {
+  const blockedReferrers = ['krzysztofplociennik.com', 'localhost', 'vercel.com'];
+
+  const isBlockedReferrer = blockedReferrers.some(r => referrer?.includes(r));
+
+  const isMyFingerprint =
+    ip.startsWith('188') &&
+    city === 'Poznan' &&
+    device === 'Desktop' &&
+    language === 'en-US';
+
+  return isBlockedReferrer || isMyFingerprint;
 }
