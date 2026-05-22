@@ -47,8 +47,8 @@ export class Projects implements AfterViewInit, OnInit, OnChanges {
           source: 'https://github.com/krzysztofplociennik/inko-backend'
         },
         imageUrl: 'assets/images/png/inko.png',
-        statusLabel: 'in-progress',
-        statusValue: 'projects.status-in-progress-label'
+        statusLabel: 'completed',
+        statusValue: 'projects.status-completed-label'
       },
       {
         id: 2,
